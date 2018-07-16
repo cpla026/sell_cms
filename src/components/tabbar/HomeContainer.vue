@@ -1,21 +1,8 @@
 <template>
   <div>
-    <!-- 轮播图 -->
-    <mt-swipe :auto="4000">
-      <!-- 在组件中使用 v-for 一定要使用 key  唯一即可  -->
-      <!--<mt-swipe-item v-for="item in lunbotuList" :key="item.url">
-        <img :src="item.url">
-      </mt-swipe-item>-->
-      <mt-swipe-item>
-        <img src="http://img3.imgtn.bdimg.com/it/u=3771844755,1959515242&fm=200&gp=0.jpg">
-      </mt-swipe-item>
-      <mt-swipe-item>
-        <img src="http://img1.imgtn.bdimg.com/it/u=1359619667,895430210&fm=27&gp=0.jpg" alt="">
-      </mt-swipe-item>
-      <mt-swipe-item>
-        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531676819457&di=dc6c45e314479eb84fc4aa556bf2caac&imgtype=0&src=http%3A%2F%2Ffile31.mafengwo.net%2FM00%2FD6%2F00%2FwKgBs1ZAhWiAcu-oAEGs9VRhF3A12.groupinfo.w680.jpeg" alt="">
-      </mt-swipe-item>
-    </mt-swipe>
+    <!-- 使用轮播图 组件-->
+    <swipe :lunbotuList="lunbotuList"></swipe>
+
     <ul class="mui-table-view mui-grid-view mui-grid-9">
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <router-link to="/home/newslist">
@@ -51,12 +38,16 @@
 
 <script>
     import {Toast} from 'mint-ui';
+    import swipe from '../subcomponents/Swiper.vue'
 
     export default {
       name: "home-container",
       data(){
          return {
-           lunbotuList:[] // 保存轮播图的list
+           lunbotuList:[
+             {'a': 1},
+             {'a': 2}
+           ] // 保存轮播图的list
          }
       },
       created(){
@@ -101,32 +92,14 @@
           //   console.log(err);
           // })
         }
+      },
+      components:{
+        swipe
       }
     }
 </script>
 
 <style lang="scss" scoped>
-
-  .mint-swipe{
-    height: 200px;
-
-    .mint-swipe-item {
-      &:nth-child(1){
-        background-color: #2ac845;
-      }
-      &:nth-child(2){
-        background-color: #007aff;
-      }
-      &:nth-child(3){
-          background-color: #f0ad4e;
-        }
-      }
-    img{
-      width: 100%;
-      height: 100%
-    }
-
-  }
   .mui-grid-view.mui-grid-9{
     background-color: white;
     border: none;

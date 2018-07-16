@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/ron': {
-        target: 'http://192.168.109.1:8080/',
+        target: 'http://192.168.40.172:8080/',
         //target: 'http://101.200.42.170:8080/', //设置你调用的接口域名和端口号
         changeOrigin: true, //跨域
         pathRewrite: {
