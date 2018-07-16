@@ -2,7 +2,11 @@
   <div id="app" class="app-container">
    <!-- header -->
     <div>
-      <mt-header fixed title="Sue`s Sweet House"></mt-header>
+      <mt-header fixed title="Sue`s Sweet House">
+        <span slot="left" @click="goBack" v-show="flag">
+          <mt-button icon="back">返回</mt-button>
+        </span>
+      </mt-header>
     </div>
 
     <!-- content -->
@@ -40,6 +44,29 @@
 <script>
   export default {
     name: 'app',
+    data(){
+      return {
+        flag: false
+      }
+    },
+    created(){  // 防止刷新页面 返回按钮 flag: false, 隐藏按钮
+      this.flag = this.$route.path === "/home" ? false : true;
+    },
+    methods: {
+      goBack(){
+        // 点击后退
+        this.$router.go(-1);
+      }
+    },
+    watch:{
+      "$route.path" : function (newVal) {
+          if(newVal === "/home"){  // 首页不显示 返回按钮
+            this.flag = false;
+          }else{
+            this.flag = true;
+          }
+      }
+    }
   }
 </script>
 
