@@ -69,5 +69,5 @@ var router = new VueRouter({
   ],
   linkActiveClass: 'mui-active'  // 覆盖默认的 router-link-active    mui-active: mui 中的高亮
 });
-
+// 导出 router
 export default router;
