@@ -11,7 +11,7 @@ export default {
     },
     data() {
         return {
-
+            msg: '456'
         };
     },
     computed: {
