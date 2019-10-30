@@ -75,10 +75,10 @@
               console.log(res.data); // 即返回的数据  {cityName: "武汉", description: "bloody hell", id: 12, provinceId: 27}
               this.lunbotuList = res.data.data;
             }).catch(err => {
-            console.log(err);
+              console.log(err);
           });
 
-          // post
+          // post 
           // get   this.$ajax.get(URL, options)
           // post  this.$ajax.post(URL, data, options)
           // options: { params: {id: 1}// 查询字符串, headers:{'content-type': 'XXX' }}
@@ -93,6 +93,7 @@
           // })
         }
       },
+      // 注册 swipe 组件
       components:{
         swipe
       }

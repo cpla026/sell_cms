@@ -1,9 +1,10 @@
 
 import Vue from 'vue'
+// 引入路由
 import  router from './router/router.js'
 import './assets/common.css'
 
-// 导入vue-resource
+// 导入 vue-resource
 import VueResource from 'vue-resource';
 // 安装vue-resource
 Vue.use(VueResource);
@@ -89,9 +90,12 @@ import './lib/mui/css/icons-extra.css'
 //Vue.config.productionTip = false
 
 /* eslint-disable no-new */
+// Vue 构造函数 指定各属性
 new Vue({
   el: '#app',
-  data:{},
+  data:{
+
+  },
   router,  // 挂在路由对象
   // render: function (createdElements) {
   //   return createdElements(login);
